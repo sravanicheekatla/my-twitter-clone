@@ -1,0 +1,359 @@
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global Styles for Light Mode (default) */
+body {
+    background-color: #F5F8FA; /* Light background */
+    color: #14171A; /* Default dark text color */
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #15202B; /* Dark background */
+    color: #FFFFFF; /* Light text for dark mode */
+}
+
+/* Home Layout */
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode for Home */
+.dark-mode .home {
+    background-color: #15202B; /* Dark background for home */
+}
+
+/* Sidebar Styling */
+.sidebar {
+    flex: 0 0 250px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .sidebar {
+    background-color: #192734;
+}
+
+.sidebar-logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1DA1F2; /* Twitter blue */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-menu li {
+    list-style: none;
+    font-size: 18px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar-menu li:hover {
+    background-color: #E1E8ED; /* Light gray hover */
+}
+
+.dark-mode .sidebar-menu li:hover {
+    background-color: #333; /* Dark mode hover */
+}
+
+.sidebar-menu li .icon {
+    margin-right: 15px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1 1 600px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Tweet Input Styling */
+.tweet-input {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .tweet-input {
+    background-color: #192734;
+}
+
+.tweet-input textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #E1E8ED;
+    border-radius: 15px;
+    resize: none;
+    height: 120px;
+    margin-bottom: 15px;
+    outline: none;
+    color: inherit;
+    background-color: inherit;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: center; /* Centering the content */
+    align-items: center; /* Vertically aligning the content */
+    gap: 20px; /* Space between search bar and dark mode toggle */
+    padding: 10px 20px;
+    background-color: #ffffff; /* Light mode header background */
+    border-bottom: 1px solid #e1e8ed; /* Border at the bottom */
+    transition: background-color 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+/* Dark Mode for Header */
+.dark-mode .header {
+    background-color: #192734; /* Dark mode header background */
+    border-bottom: 1px solid #333; /* Dark mode border */
+}
+
+/* Search Bar Styling */
+.search-container {
+    flex: 1; /* Makes the search bar take up available space */
+    max-width: 600px; /* Limit the max width of the search bar */
+}
+
+.search-bar {
+    width: 100%;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #e1e8ed;
+    font-size: 16px;
+    outline: none;
+    background-color: #f5f8fa;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar:focus {
+    background-color: #e8f5fd;
+    border-color: #1DA1F2; /* Blue border when focused */
+}
+
+/* Dark Mode Search Bar */
+.dark-mode .search-bar {
+    background-color: #192734; /* Dark mode search bar background */
+    color: white; /* White text in dark mode */
+    border-color: #333;
+}
+
+.dark-mode .search-bar:focus {
+    border-color: #1DA1F2;
+}
+
+/* Dark Mode Toggle Button */
+.theme-toggle-btn {
+    background-color: transparent;
+    border: none;
+    color: #1DA1F2;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    color: #0d94d2; /* Darker blue when hovered */
+}
+
+.dark-mode .theme-toggle-btn {
+    color: #FFD700; /* Yellow for sun icon when in dark mode */
+}
+
+/* Tweet List */
+.tweet-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Tweet Content */
+.tweet {
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 20px; /* Increased padding for a more spacious layout */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space between elements inside the tweet */
+}
+
+.dark-mode .tweet {
+    background-color: #192734;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Tweet Interactions */
+.tweet-interactions {
+    display: flex;
+    justify-content: space-between; /* Spreads interactions evenly */
+    padding: 10px 0; /* Adds spacing around the interaction area */
+    border-top: 1px solid #E1E8ED; /* Adds a subtle separator */
+    gap: 20px; /* Space between each interaction */
+    font-size: 16px;
+    color: #657786; /* Subtle text color */
+    transition: color 0.3s ease;
+}
+
+.dark-mode .tweet-interactions {
+    border-top: 1px solid #333; /* Dark mode separator */
+    color: #8899A6;
+}
+
+/* Interaction Button Hover Effect */
+.tweet-interactions button {
+    background: none;
+    border: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tweet-interactions button:hover {
+    color: #1DA1F2; /* Highlight color on hover */
+    transform: scale(1.1); /* Slight enlargement for better feedback */
+}
+
+.dark-mode .tweet-interactions button:hover {
+    color: #f4f7f9; /*  highlight for dark mode */
+}
+
+/* Right Sidebar (Follow Suggestions & Trends) */
+.right-sidebar {
+    flex: 0 0 350px;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds space between the two sections */
+}
+
+.dark-mode .right-sidebar {
+    background-color: #192734;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .home {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .right-sidebar {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .header {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar-logo {
+        font-size: 28px;
+    }
+
+    .sidebar-menu li {
+        font-size: 16px;
+    }
+
+    .tweet-input textarea {
+        font-size: 14px;
+    }
+
+    .tweet-list {
+        gap: 15px;
+    }
+
+    .search-bar {
+        font-size: 14px;
+    }
+
+    .theme-toggle-btn {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .search-container {
+        max-width: 100%;
+    }
+
+    .theme-toggle-btn {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+}
